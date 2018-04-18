@@ -4,8 +4,121 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d258751f4bab64a20ad7dcf95f96b47",
-    "packages": [],
+    "content-hash": "56eed0e716bd9dd94b0caa3c32ee5180",
+    "packages": [
+        {
+            "name": "symfony/http-foundation",
+            "version": "v4.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-foundation.git",
+                "reference": "d0864a82e5891ab61d31eecbaa48bed5a09b8e6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/d0864a82e5891ab61d31eecbaa48bed5a09b8e6c",
+                "reference": "d0864a82e5891ab61d31eecbaa48bed5a09b8e6c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/polyfill-mbstring": "~1.1"
+            },
+            "require-dev": {
+                "symfony/expression-language": "~3.4|~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\HttpFoundation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony HttpFoundation Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-04-03T05:24:00+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "78be803ce01e55d3491c1397cf1c64beb9c1b63b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/78be803ce01e55d3491c1397cf1c64beb9c1b63b",
+                "reference": "78be803ce01e55d3491c1397cf1c64beb9c1b63b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2018-01-30T19:27:44+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -674,16 +787,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.1.3",
+            "version": "7.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a7834993ddbf4b0ed2c3b2dc1f3b1d093ef910a9"
+                "reference": "6d51299e307dc510149e0b7cd1931dd11770e1cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a7834993ddbf4b0ed2c3b2dc1f3b1d093ef910a9",
-                "reference": "a7834993ddbf4b0ed2c3b2dc1f3b1d093ef910a9",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6d51299e307dc510149e0b7cd1931dd11770e1cb",
+                "reference": "6d51299e307dc510149e0b7cd1931dd11770e1cb",
                 "shasum": ""
             },
             "require": {
@@ -702,7 +815,7 @@
                 "phpunit/php-text-template": "^1.2.1",
                 "phpunit/php-timer": "^2.0",
                 "phpunit/phpunit-mock-objects": "^6.1.1",
-                "sebastian/comparator": "^2.1",
+                "sebastian/comparator": "^2.1 || ^3.0",
                 "sebastian/diff": "^3.0",
                 "sebastian/environment": "^3.1",
                 "sebastian/exporter": "^3.1",
@@ -750,7 +863,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-04-13T02:28:50+00:00"
+            "time": "2018-04-18T13:41:53+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

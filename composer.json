@@ -7,8 +7,10 @@
             "email": "simon.ritzmann@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "symfony/http-foundation": "v4.*"
+    },
     "require-dev": {
-        "phpunit/phpunit": "7.1.3"       
+        "phpunit/phpunit": "7.*"       
     }
 }
