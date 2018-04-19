@@ -2,7 +2,6 @@
 declare(strict_types = 1);
 
 require __DIR__."/../vendor/autoload.php";
-include __DIR__."/../src/controllers/SampleController.php";
 
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
@@ -18,10 +17,12 @@ $dispatcher = FastRoute\simpleDispatcher(function(RouteCollector $rc) {
     }
 });
 
+$controllerResolver = new Framework\ControllerResolver();
+
 $routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPathInfo());
 switch ($routeInfo[0]) {
     case Dispatcher::FOUND:
-        $controller = $routeInfo[1];
+        $controller = $controllerResolver->getController($routeInfo[1]);
         $response = call_user_func($controller, $request);
         break;
     case Dispatcher::NOT_FOUND:

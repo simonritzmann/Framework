@@ -2,7 +2,6 @@
 declare(strict_types = 1);
 $routes = [];
 
-// todo: don't instantiate every controller
-$routes[] = ["GET", "/sample", [new SampleController(), "render"]];
+$routes[] = ["GET", "/sample", "Framework\Controller\SampleController::render"];
 
 return $routes;

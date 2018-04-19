@@ -1,7 +1,8 @@
 <?php
 declare(strict_types = 1);
 
-require __DIR__."/../../vendor/autoload.php";
+namespace Framework\Controller;
+
 use Symfony\Component\HttpFoundation\Response;
 
 class SampleController {
