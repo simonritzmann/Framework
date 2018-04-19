@@ -2,6 +2,7 @@
 declare(strict_types = 1);
 
 require __DIR__."/../vendor/autoload.php";
+include __DIR__."/../src/controllers/SampleController.php";
 
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
