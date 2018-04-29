@@ -12,9 +12,11 @@
         "nikic/fast-route": "v1.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "7.*"       
+        "phpunit/phpunit": "7.*"
     },
     "autoload": {
-        "psr-4": {"Framework\\": "src/"}
+        "psr-4": {
+            "": "src"
+        }
     }
 }
