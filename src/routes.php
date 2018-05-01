@@ -2,6 +2,6 @@
 declare(strict_types = 1);
 $routes = [];
 
-$routes[] = ["GET", "/", "Sample\Controller\SampleController::render"];
+$routes[] = ["GET", "/", "Homepage\Controller\HomepageController::render"];
 
 return $routes;

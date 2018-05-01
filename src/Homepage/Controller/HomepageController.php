@@ -1,12 +1,12 @@
 <?php
 declare(strict_types = 1);
 
-namespace Sample\Controller;
+namespace Homepage\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class SampleController {
+class HomepageController {
     public function render($request) {
-        return new Response("Hello World!");
+        return new Response("Welcome to our website!");
     }
 }
