@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 require __DIR__."/../vendor/autoload.php";
 
@@ -17,22 +17,25 @@ $dispatcher = FastRoute\simpleDispatcher(function(RouteCollector $rc) {
     }
 });
 
-$controllerResolver = new Framework\ControllerResolver();
-
+$response = new Response();
 $routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPathInfo());
 switch ($routeInfo[0]) {
     case Dispatcher::FOUND:
+        $controllerResolver = new Framework\ControllerResolver();
         $controller = $controllerResolver->getController($routeInfo[1]);
-        $response = call_user_func($controller, $request);
+        $response = call_user_func($controller, $request, $response);
         break;
     case Dispatcher::NOT_FOUND:
-        $response = new Response("Page not found", 404);
+        $response->setStatusCode(404);
+        $response->setContent("Page not found");
         break;
     case Dispatcher::METHOD_NOT_ALLOWED:
-        $response = new Response("Method not allowed", 405);
+        $response->setStatusCode(405);
+        $response->setContent("Method not allowed");
         break;
     default:
-        $response = new Response("Internal server error", 500);
+        $response->setStatusCode(500);
+        $response->setContent("Internal server error");
         break;
 }
 

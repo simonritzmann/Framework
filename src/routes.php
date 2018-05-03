@@ -1,7 +1,7 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 $routes = [];
 
-$routes[] = ["GET", "/", "Homepage\Controller\HomepageController::render"];
+$routes[] = ["GET", "/", "Homepage\Controller\HomepageController::welcomeAction"];
 
 return $routes;

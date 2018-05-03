@@ -1,12 +1,24 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Homepage\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Framework\View\ViewLoader;
+use Framework\View\InvalidViewException;
 
 class HomepageController {
-    public function render($request) {
-        return new Response("Welcome to our website!");
+    private $model;
+    
+    public function welcomeAction($request,$response) {
+        $templateDir = __DIR__ . "/../templates/"; // TODO: outsource    
+ 
+        try {
+            $viewLoader = new ViewLoader($templateDir);
+            $response->setContent($viewLoader->loadView("Homepage")); // TODO: dynamic
+        } catch (InvalidViewException $e) {
+            $response->setStatusCode(404);
+            $response->setContent("Page not found");
+        }
+        return $response;
     }
 }
