@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
-$routes = [];
 
-$routes[] = ["GET", "/", "Homepage\Controller\HomepageController::welcomeAction"];
+use Framework\Router\Route;
+
+$routes = [];
+$routes[] = ["/", new Route("HomepageController", "HomepageModel", "HomepageView", "welcomeAction")];
 
 return $routes;

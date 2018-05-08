@@ -8,8 +8,7 @@
         }
     ],
     "require": {
-        "symfony/http-foundation": "v4.*",
-        "nikic/fast-route": "v1.*"
+        "symfony/http-foundation": "v4.*"
     },
     "require-dev": {
         "phpunit/phpunit": "7.*"

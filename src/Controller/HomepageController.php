@@ -1,15 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace Homepage\Controller;
+namespace Controller;
 
 use Framework\View\ViewLoader;
 use Framework\View\InvalidViewException;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomepageController {
     private $model;
     
-    public function welcomeAction($request,$response) {
+    public function welcomeAction(Request $request, Response $response) {
         $templateDir = __DIR__ . "/../templates/"; // TODO: outsource    
  
         try {
