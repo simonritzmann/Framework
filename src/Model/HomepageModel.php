@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Model;
 
-class HomepageModel {
+use Framework\Model;
+
+class HomepageModel implements Model {
     private $text;
     
     public function __construct() {

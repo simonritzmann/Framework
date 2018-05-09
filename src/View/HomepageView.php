@@ -3,19 +3,21 @@ declare(strict_types=1);
 
 namespace View;
 
-use Model\HomepageModel;
+use Framework\Model;
+use Framework\View;
 
-class HomepageView {
+class HomepageView implements View {
     private $model;
     private $template;
     
-    public function __construct(HomepageModel $model, string $template) {
+    public function __construct(Model $model) {
         $this->model = $model;
-        $this->template = $template;
+        // todo:
+        $this->template = BASE_DIR . "/src/templates/homepage.php";
     }
     
     public function render() {
-        // TODO: data
+        // TODO: data injection through model
         
         ob_start();
         include $this->template;

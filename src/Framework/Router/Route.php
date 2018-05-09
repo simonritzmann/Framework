@@ -9,26 +9,26 @@ class Route {
     private $view;
     private $action;
     
-    public function __construct($controller, $model, $view, $action) {
+    public function __construct(string $controller, string $model, string $view, string $action = null) {
         $this->controller = $controller;
         $this->model = $model;
         $this->view = $view;
         $this->action = $action;
     }
 
-    public function getControllerName() {
+    public function getControllerName(): string {
         return $this->controller;
     }
 
-    public function getModelName() {
+    public function getModelName(): string {
         return $this->model;
     }
 
-    public function getViewName() {
+    public function getViewName(): string {
         return $this->view;
     }
 
-    public function getActionName() {
+    public function getActionName(): string {
         return $this->action;
     }
 }
