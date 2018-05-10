@@ -4,31 +4,37 @@ declare(strict_types=1);
 namespace Framework\Router;
 
 class Route {
-    private $controller;
-    private $model;
-    private $view;
+    private $className;
+    private $template;
     private $action;
     
-    public function __construct(string $controller, string $model, string $view, string $action = null) {
-        $this->controller = $controller;
-        $this->model = $model;
-        $this->view = $view;
+    public function __construct(string $className, string $template, string $action = null) {
+        $this->className = $className;
+        $this->template = $template;
         $this->action = $action;
     }
 
-    public function getControllerName(): string {
-        return $this->controller;
+    public function getController(): string {
+        return $this->getFullyQualifiedName(CONTROLLER_NAMESPACE);
     }
 
-    public function getModelName(): string {
-        return $this->model;
+    public function getModel(): string {
+        return $this->getFullyQualifiedName(MODEL_NAMESPACE);
     }
 
-    public function getViewName(): string {
-        return $this->view;
+    public function getView(): string {
+        return $this->getFullyQualifiedName(VIEW_NAMESPACE);
     }
 
-    public function getActionName(): string {
+    public function getTemplate(): string {
+        return $this->template;
+    }
+
+    public function getAction(): ?string {
         return $this->action;
+    }
+
+    private function getFullyQualifiedName(string $namespace): string {
+        return $namespace . $this->className;
     }
 }
