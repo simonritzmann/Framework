@@ -1,20 +1,21 @@
 {
-    "name": "simonritzmann/framework",
-    "authors": [
-        {
-            "name": "Simon Ritzmann",
-            "email": "simon.ritzmann@gmail.com"
-        }
-    ],
-    "require": {
-        "symfony/http-foundation": "v4.*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "7.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "": "src"
-        }
+  "name": "simonritzmann/framework",
+  "authors": [
+    {
+      "name": "Simon Ritzmann",
+      "email": "simon.ritzmann@gmail.com"
     }
+  ],
+  "require": {
+    "symfony/http-foundation": "v4.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "7.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core\\": "core",
+      "App\\": "app"
+    }
+  }
 }

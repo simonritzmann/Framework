@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace View;
+namespace App\View;
 
-use Framework\Model;
-use Framework\View;
+use Core\Model;
+use Core\View;
 
 class Homepage implements View {
     private $model;
@@ -21,7 +21,7 @@ class Homepage implements View {
 
         ob_start();
         // todo:
-        include TEMPLATE_DIR . $this->template;
+        include TEMPLATE_DIR . "/" . $this->template;
         return ob_get_clean();
     }
 }

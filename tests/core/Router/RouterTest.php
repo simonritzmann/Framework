@@ -1,22 +1,22 @@
 <?php
 declare(strict_types=1);
 
-namespace Framework\Router;
+namespace Core\Router;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 class RouterTest extends TestCase {
-    
+
     public function testCanAddRoute(): void {
         $method = "GET";
         $path = "/";
-        $route = new Route("Controller", "Model", "View", "action");
+        $route = new Route("SomeClass", "template.php");
+
+        $request = Request::create($path, $method);
 
         $router = new Router();
         $router->addRoute($method, "/", $route);
-
-        $request = Request::create($path, $method);
 
         $this->assertEquals($route, $router->getRoute($request));
     }

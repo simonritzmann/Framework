@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Model;
+namespace App\Model;
 
-use Framework\Model;
+use Core\Model;
 
 class Homepage implements Model {
     private $title;

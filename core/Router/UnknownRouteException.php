@@ -2,8 +2,7 @@
 declare(strict_types=1);
 
 
-namespace Framework\Router;
-
+namespace Core\Router;
 
 use Exception;
 use Throwable;

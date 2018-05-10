@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Framework;
+namespace Core;
 
-use Framework\Router\MethodNotAllowedException;
-use Framework\Router\Router;
-use Framework\Router\UnknownRouteException;
+use Core\Router\MethodNotAllowedException;
+use Core\Router\Router;
+use Core\Router\UnknownRouteException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

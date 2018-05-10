@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Controller;
+namespace App\Controller;
 
-use Framework\Controller;
-use Framework\Model;
+use Core\Controller;
+use Core\Model;
 
 class Homepage implements Controller {
     private $model;
