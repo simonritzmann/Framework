@@ -31,7 +31,7 @@ class FrontController {
                 $controller->$action();
             }
 
-            $this->setResponse(200, $view->render());
+            $this->setResponse(200, $view->output());
         } catch (UnknownRouteException $e) {
             $this->setResponse(404, "Page not found");
         } catch (MethodNotAllowedException $e) {

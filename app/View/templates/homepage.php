@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?= $title ?></title>
+    <title>Homepage</title>
 </head>
 <body>
     <form method="get" action="/welcome">

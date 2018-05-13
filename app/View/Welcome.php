@@ -1,12 +1,18 @@
 <?php
-declare(strict_types=1);
+/**
+ * Created by PhpStorm.
+ * User: Simon Ritzmann
+ * Date: 11.05.2018
+ * Time: 11:38
+ */
 
 namespace App\View;
+
 
 use Core\Model;
 use Core\View;
 
-class Homepage implements View {
+class Welcome implements View {
     private $model;
     private $template;
 
@@ -16,12 +22,7 @@ class Homepage implements View {
     }
 
     public function output(): string {
-        $title = $this->model->getTitle();
-        $name = $this->model->getName();
-
-        // todo
-        ob_start();
-        include TEMPLATE_DIR . "/" . $this->template;
-        return ob_get_clean();
+        // TODO: Implement output() method.
+        return "";
     }
 }
