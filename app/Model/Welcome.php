@@ -9,14 +9,16 @@ use Core\Model;
 class Welcome extends Model {
     private $name = "";
 
-    public function getData(): array {
-        return $this->data;
-    }
-
+    /**
+     * dummy implementation, data would usually be read from a data storage such as a database
+     */
     public function getName(): string {
         return $this->name;
     }
 
+    /**
+     * dummy implementation, data would usually be saved to a data storage such as a database
+     */
     public function setName($name): void {
         $this->name = $name;
     }

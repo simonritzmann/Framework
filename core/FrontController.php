@@ -9,10 +9,28 @@ use Core\Router\UnknownRouteException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class FrontController
+ *
+ * @package Core
+ */
 class FrontController {
+    /**
+     * @var Request Contains the current request object
+     */
     private $request;
+    /**
+     * @var Response Contains the current response object
+     */
     private $response;
 
+    /**
+     * FrontController constructor.
+     *
+     * @param Router $router Router to be used
+     * @param Request $request Current request object
+     * @param Response $response Current response object
+     */
     public function __construct(Router $router, Request $request, Response $response) {
         $this->request = $request;
         $this->response = $response;
@@ -50,6 +68,11 @@ class FrontController {
         }
     }
 
+    /**
+     * Return the request arguments according to the request method
+     *
+     * @return array An array containing all request arguments
+     */
     private function getArgumentsFromRequest(): array {
         $method = $this->request->getMethod();
         if ($method == $this->request::METHOD_GET) {
@@ -59,11 +82,22 @@ class FrontController {
         }
     }
 
+    /**
+     * Update the status code and content of the response object
+     *
+     * @param int $statusCode HTTP status code
+     * @param string $content Content of the response
+     */
     private function setResponse(int $statusCode, string $content): void {
         $this->response->setStatusCode($statusCode);
         $this->response->setContent($content);
     }
 
+    /**
+     * Return response object
+     *
+     * @return Response Response object
+     */
     public function getResponse(): Response {
         return $this->response;
     }

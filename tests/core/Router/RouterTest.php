@@ -18,7 +18,7 @@ class RouterTest extends TestCase {
         $router = new Router();
         $router->addRoute($method, "/", $route);
 
-        $this->assertEquals($route, $router->getRoute($request));
+        $this->assertSame($route, $router->getRoute($request));
     }
 
     public function testCannotGetRouteFromUnknownPath(): void {
