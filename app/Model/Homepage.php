@@ -5,5 +5,5 @@ namespace App\Model;
 
 use Core\Model;
 
-class Homepage implements Model {
+class Homepage extends Model {
 }

@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 namespace Core;
 
-interface Controller {
-    public function __construct(Model $model);
+abstract class Controller {
+    protected $model;
+
+    public function __construct(Model $model) {
+        $this->model = $model;
+    }
 }

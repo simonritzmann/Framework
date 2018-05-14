@@ -40,14 +40,21 @@ class Router {
         return $this->routes[$regex][$method];
     }
 
-    // todo: e.g. "page/{page}" becomes "~^page/(.*)$~"
+    /**
+     * Convert route pattern to regex pattern, e.g. "page/{page}" becomes "~^page/(.*)$~"
+     *
+     * @param string $routePattern
+     * @return string
+     */
     private function convertRoutePatternToRegexPattern(string $routePattern): string {
+        $delimiter = "~";
         $routePattern = preg_quote($routePattern);
 
-        // preg_quote also escapes "{" and "}", so reverse that
+        // preg_quote also escaped "{" and "}", so reverse that
         $routePattern = str_replace(["\\{", "\\}"], ["{", "}"], $routePattern);
 
-        $regexPattern = "~^". preg_replace("(\{(.+?)\})", "(.*)", $routePattern) . "$~";
-        return $regexPattern;
+        $regexPattern = "^" . preg_replace("(\{(.+?)\})", "(.*)", $routePattern) . "$";
+        $regex = $delimiter . $regexPattern . $delimiter;
+        return $regex;
     }
 }

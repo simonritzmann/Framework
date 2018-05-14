@@ -3,7 +3,21 @@ declare(strict_types=1);
 
 namespace Core;
 
-interface View {
-    public function __construct(Model $model, string $template);
-    public function output(): string;
+abstract class  View {
+    protected $model;
+    protected $template;
+
+    public function __construct(Model $model, string $template) {
+        $this->model = $model;
+        $this->template = $template;
+    }
+    abstract public function output(): string;
+
+    protected function render($data = []) {
+        extract($data);
+
+        ob_start();
+        include TEMPLATE_DIR . "/" . $this->template;
+        return ob_get_clean();
+    }
 }
