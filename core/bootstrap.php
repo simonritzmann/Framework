@@ -36,7 +36,6 @@ const MODEL_NAMESPACE = "App\\Model\\";
  */
 const VIEW_NAMESPACE = "App\\View\\";
 
-
 /**
  * Load composers autoloader
  */

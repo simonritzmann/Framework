@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Simon Ritzmann
- * Date: 11.05.2018
- * Time: 11:38
- */
+declare(strict_types=1);
 
 namespace App\View;
 
@@ -22,7 +17,11 @@ class Welcome implements View {
     }
 
     public function output(): string {
-        // TODO: Implement output() method.
-        return "";
+        $name = $this->model->getName();
+
+        // todo
+        ob_start();
+        include TEMPLATE_DIR . "/" . $this->template;
+        return ob_get_clean();
     }
 }

@@ -5,6 +5,6 @@
     <title>Welcome</title>
 </head>
 <body>
-
+    <p>Welcome on our website <?=$name?></p>
 </body>
 </html>

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Simon Ritzmann
- * Date: 11.05.2018
- * Time: 11:38
- */
+declare(strict_types=1);
 
 namespace App\Model;
 
@@ -12,5 +7,13 @@ namespace App\Model;
 use Core\Model;
 
 class Welcome implements Model {
+    private $name = "";
 
+    public function getName(): string {
+        return $this->name;
+    }
+
+    public function setName($name): void {
+        $this->name = $name;
+    }
 }

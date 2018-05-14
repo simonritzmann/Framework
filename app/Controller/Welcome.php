@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-
 namespace App\Controller;
 
 use Core\Controller;
@@ -11,12 +10,12 @@ class Welcome implements Controller {
     private $model;
 
     public function __construct(Model $model) {
-        $this->model;
+        $this->model = $model;
     }
 
     // todo
-    public function welcomeAction(): void {
-
+    public function welcomeAction(string $name): void {
+        $this->model->setName($name);
     }
 
     public function output() {

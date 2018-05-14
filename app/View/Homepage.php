@@ -16,12 +16,16 @@ class Homepage implements View {
     }
 
     public function output(): string {
-        $title = $this->model->getTitle();
-        $name = $this->model->getName();
-
         // todo
         ob_start();
         include TEMPLATE_DIR . "/" . $this->template;
+        return ob_get_clean();
+    }
+
+    private function render(string $template, $arguments) {
+        extract($arguments);
+        ob_start();
+        include TEMPLATE_DIR . "/" . $template;
         return ob_get_clean();
     }
 }

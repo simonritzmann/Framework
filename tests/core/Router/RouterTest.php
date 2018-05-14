@@ -34,11 +34,14 @@ class RouterTest extends TestCase {
     public function testCannotGetRouteFromUnallowedMethod(): void {
         $this->expectException(MethodNotAllowedException::class);
 
-        $path = "/";
-        $method = "PUT";
-        $request = Request::create($path, $method);
-
         $router = new Router();
+        $method = "GET";
+        $routePath = "/";
+        $router->addRoute($method, $routePath, new Route("SomeClass", "template.php"));
+
+        $unallowedMethod = "PUT";
+        $request = Request::create($routePath, $unallowedMethod);
+
         $router->getRoute($request);
     }
 }
